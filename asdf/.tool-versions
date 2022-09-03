@@ -1,0 +1,5 @@
+java openjdk-11
+python 3.9.5
+golang 1.18.2
+nodejs lts
+php 8.1.8
