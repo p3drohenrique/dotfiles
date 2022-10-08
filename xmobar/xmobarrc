@@ -1,0 +1,39 @@
+Config { font = "xft:JetBrains Mono Nerd Font:weight=bold:pixelsize=13:antialias=true:hinting=true"
+        , additionalFonts = []
+        , borderColor = "#FAD000"
+        , border = TopB
+        , bgColor = "#1E1E3F"
+        , fgColor = "#FFFFFF"
+        , alpha = 229
+        , position = Static { xpos = 0 , ypos = 0, width = 1366, height = 22 }
+        , textOffset = -1
+        , iconOffset = -1
+        , lowerOnStart = True
+        , pickBroadest = False
+        , persistent = False
+        , hideOnStart = False
+        , iconRoot = "."
+        , allDesktops = True
+        , overrideRedirect = True
+        , borderWidth = 2
+        , commands = [ 
+                     -- Wifi Network up and down
+                       Run Network "wlp0s20f3" ["-t", "<fc=#3db72a><fn=1>\xf0aa</fn></fc> <rx>Kbs <fc=#d52822><fn=1>\xf0ab</fn></fc> <tx>Kbs"] 20
+                     -- Cpu usage in percent
+                     , Run Cpu ["-t", "<fc=#fad000><fn=1>\xf108</fn></fc>  Cpu: (<total>%)", "-H", "50", "--high", "#D52822"] 20
+                     -- Ram used number and percent
+                     , Run Memory ["-t","<fc=#6943ff><fn=1>\xf233</fn></fc>  Memory: <used>M (<usedratio>%)"] 20
+                     -- Echos a "battery" icon in front of the pacman updates.
+                     , Run Com "echo" ["<fc=#9effff><fn=2>\xf242</fn></fc>"] "baticon" 3600
+                     -- Battery
+                     , Run BatteryP ["BAT0"] ["-t", "<acstatus><watts> (<left>%)"] 360
+                     -- Date and time
+                     , Run Date "<fc=#ff628c><fn=2>\xf073</fn></fc> %b %d %Y - %H:%M " "date" 50
+                     -- Workspaces
+                     , Run UnsafeStdinReader
+                     ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "ﮊ Overlord %UnsafeStdinReader% }\
+                    \{ %wlp0s20f3% | %cpu% | %memory% | %baticon%  %battery% | %date%"
+        }

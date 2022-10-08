@@ -1,3 +1,16 @@
+" Do not yank with x
+noremap x "_x
+
+" Select all
+nmap <C-a> gg<S-v>G
+
+" Increment/decrement
+noremap + <C-a>
+noremap - <C-x>
+
+" Delete a word backwards
+nmap dw vb"_d
+
 " Adding an empty line below, above and below with insert
 nmap op o<Esc>k
 nmap oi O<Esc>j
@@ -23,11 +36,13 @@ nmap tt :q<CR>
 " Call command shortcut
 nmap tc :!
 
-" Nerdtree
-nmap <C-a> :NERDTreeToggle<CR>
-
 " Shortcuts for split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Clipboard
+" noremap <Leader>y "*yy
+" noremap <Leader>y "*y
+" noremap <Leader>p "*p

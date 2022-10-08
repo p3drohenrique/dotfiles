@@ -5,7 +5,9 @@ if exists("&termguicolors")
   set wildoptions=pum
   set pumblend=5
   set background=dark
-  colorscheme dracula
+  set cursorline
+  colorscheme shades_of_purple
+
 
   highlight Normal guibg=none
   highlight NonText guibg=none

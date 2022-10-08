@@ -4,13 +4,11 @@ set number
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-" set tabstop=4
-" set softtabstop=4
-" set shiftwidth=4
 set expandtab
 set smarttab
 set smartindent
 set autoindent
+set breakindent
 set hidden
 set incsearch
 set ignorecase
@@ -18,8 +16,6 @@ set smartcase
 set scrolloff=10
 set cmdheight=1
 set updatetime=100
-set encoding=utf-8
-set fileencodings=utf-8,latin
 set nobackup
 set nowritebackup
 set splitright
@@ -32,6 +28,11 @@ set nowrap
 set path+=**
 set wildignore+=*/node_modules/*
 set formatoptions+=r
+set encoding=utf-8
+set fileencodings=utf-8,latin
+set ai
+set si
+set clipboard+=unnamedplus
 
 scriptencoding utf-8
 filetype on
@@ -53,12 +54,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " IMPORTS
 runtime ./plug.vim
+runtime ./plugconfig.vim
 runtime ./remaps.vim
 runtime ./autocmd.vim
 runtime ./theme.vim
-
-" AIRLINE
-let g:airline_theme = 'dracula'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
