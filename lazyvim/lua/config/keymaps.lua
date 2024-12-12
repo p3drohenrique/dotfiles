@@ -20,6 +20,11 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
+-- Create line
+keymap.set("n", "op", "o<Esc>k")
+keymap.set("n", "oi", "O<Esc>j")
+keymap.set("n", "oo", "A<CR>")
+
 -- New Tab
 keymap.set("n", "te", ":tabe<CR>", opts)
 keymap.set("n", "<tab>", ":bn<CR>", opts)
@@ -59,3 +64,7 @@ keymap.set("n", "p", '"*p', opts)
 -- Delete LazyVim keymaps
 vim.keymap.del("n", "<c-_>") -- remove binding to open floating terminal
 vim.keymap.del("n", "<c-/>") -- remove binding to open floating terminal
+
+vim.keymap.set("i", "<A-j>", "")
+vim.keymap.set("i", "<A-k>", "")
+vim.keymap.set("i", "<Esc>", "<Esc>")
